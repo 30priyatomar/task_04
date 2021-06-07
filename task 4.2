@@ -1,0 +1,25 @@
+#task 4.2
+#take 2 image crop some part of both image and swap it
+def showing(image):
+    cv2.imshow("show", image)
+    cv2.waitKey()
+    cv2.destroyAllWindows()
+import cv2
+import numpy
+img1 = cv2.imread("image1.jpg")
+img2 = cv2.imread("image2.jpg")
+showing(img1)
+showing(img2)
+
+#cropping faces
+face1 = img1[5:106,70:190]
+showing(face1)
+face2 = img2[5:106,70:190]
+showing(face2)
+
+img1=cv2.imread("image1.jpg")
+img1[5:106,70:190]= face2
+img2[5:106,70:190]= face1
+showing(img1)
+showing(img2)
+
