@@ -1,0 +1,15 @@
+#task 4.3
+#take 2 images and combine in a form a collage
+def Vcollage(image):
+    resize_img=[]
+    for i in image:
+        resize_img.append(cv2.resize(i,(350,250)))
+    collage= numpy.vstack(tuple(resize_img))
+    return collage
+img1 = cv2.imread("image1.jpg")
+img2 = cv2.imread("image2.jpg")
+showing(img1)
+showing(img2)
+
+vcollage= Vcollage((img1,img2))
+showing(vcollage)
